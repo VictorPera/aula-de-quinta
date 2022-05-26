@@ -8,7 +8,7 @@
 
 .navbar
 {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -26,20 +26,26 @@
     height: 80px;
     width: 100%;
     max-width: 1300px;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: auto;
+    margin-left: auto;
     padding-right: 50px;
     padding-left: 50px;
 }
 
+
 #navbar__logo
 {
-    color: antiquewhite;
+    color: rgb(248, 0, 0);
     display: flex;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
     font-size: 2em;
+    text-shadow: 
+    0 0 10px rgb(250, 73, 73),
+    0 0 10px rgb(255, 138, 138),
+    0 0 10px rgb(255, 211, 211)
+    ;
 }
 
 .navbar__menu
@@ -57,7 +63,7 @@
 
 .navbar__links
 {
-    color: #fff;
+    color: rgb(13, 26, 197);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,19 +93,103 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    background:#fff;
+    background:rgb(199, 39, 39);
     color: #000; 
 }
-.baixo
-{
-    background-color: black;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
 
+.main
+{
+    background-color: rgb(218, 129, 14);
+}
+
+.main__container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;/*fita de alinhar os bgl que nem o word,porém esse é na horizontal*/
+    justify-self: center;/*fita de alinhar os bgl que nem o word,porém esse é na vertical*/
+    margin: 0 auto;
+    height: 90vh;/*metade de 180px o vh*/
+    background-color: rgb(5, 255, 172);
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.main__content 
+{
+    width: 100%;
+}
+
+.main__content h1
+{
+    font-size: 3.5rem;
+    color: rgb(254, 240, 255);
+}
+
+.text-highlight
+{
+    color: blue;
+}
+
+.main__content p
+{
+    font-size:2.5rem;
+    margin-top: 8px;
+    font-weight: 100;
+    color: violet;
+}
+
+.main__btn
+{
+    font-size: 1rem;
+    padding: 14px 32px;
+    background-color: aqua;
+    border: none;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+.main__btn a
+{
+    position:relative;
+    z-index: 2;
+    color: #000;
+    text-decoration: none;
+}
+
+.main__btn:after
+{
+    position:absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: aquamarine;
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+
+.main__btn:hover:after
+{
+    width: 100%;
+}
+
+.main__img--container
+{
+    text-align: center;
+}
+
+#main__img
+{
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
 }
