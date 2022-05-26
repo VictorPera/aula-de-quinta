@@ -45,7 +45,8 @@
     0 0 10px rgb(250, 73, 73),
     0 0 10px rgb(255, 138, 138),
     0 0 10px rgb(255, 211, 211)
-    ;
+    ;/*deixa a imagem neon text shadow para texto]
+    e para imagem é box-shadow*/
 }
 
 .navbar__menu
