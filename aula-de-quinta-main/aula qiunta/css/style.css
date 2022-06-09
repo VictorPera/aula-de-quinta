@@ -1,0 +1,613 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar
+{
+    background-color: #131313;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container
+{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+
+#navbar__logo
+{
+    color: #fff ;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2em;
+    text-shadow: 
+    0 0 10px rgb(250, 73, 73),
+    0 0 10px rgb(255, 138, 138),
+    0 0 10px rgb(255, 211, 211)
+    ;/*deixa a imagem neon text shadow para texto]
+    e para imagem é box-shadow*/
+}
+
+.navbar__menu
+{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item
+{
+    height: 80px;
+}
+
+.navbar__links
+{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;/*o "rem" usa núemoros inteiros e o "em" números com virgula*/
+    height: 100%;
+}
+
+.navbar__btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+    width: 100%;
+}
+
+.button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #fff;
+    color: #000; 
+}
+
+.button:hover/*hover serve para falar q o conteudo tem efeito*/
+{
+    background-color: #7b26d5;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.navbar__links:hover
+{
+    color: #7b26d5;
+    transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 960px){
+    .navbar__container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        width: 100%;
+        z-index: 1;
+        max-width: 1300px;
+        padding: 0;
+    }
+    #navbar__logo{
+        padding-left: 25px;
+    }
+    .navbar__menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+    .navbar__menu.active{
+        background: #131313;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        font-size: 1.6rem;
+    }
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;    
+    }
+    .navbar__item{
+        width: 100%;
+    }
+    .navbar__links{
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3)    {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+
+}
+
+/*Hero Menu*/
+
+.main
+{
+    background-color: #000;
+}
+
+.main__container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;/*fita de alinhar os bgl que nem o word,porém esse é na horizontal*/
+    justify-self: center;/*fita de alinhar os bgl que nem o word,porém esse é na vertical*/
+    margin: 0 auto;
+    height: 90vh;/*metade de 180px o vh*/
+    background-color: #000;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.main__content 
+{
+    width: 100%;
+}
+
+.main__content h1
+{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.text-highlight
+{
+    color: #0071f3
+}
+
+.main__content p
+{
+    font-size:2.5rem;
+    margin-top: 8px;
+    font-weight: 100;
+    color: #dbdbdb;
+}
+
+.main__btn
+{
+    font-size: 1rem;
+    padding: 14px 32px;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+.main__btn a
+{
+    position:relative;
+    z-index: 2;
+    color: #000;
+    text-decoration: none;
+}
+
+.main__btn:after
+{
+    position:absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #782605;
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+
+.main__btn:hover:after
+{
+    width: 100%;
+}
+
+.main__img--container
+{
+    text-align: center;
+}
+
+#main__img
+{
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 768px){
+    .main__container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+    .main__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .main__content h1 {
+        font-size: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .main__content p {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+    @media screen and (max-width: 480px) {
+        .main__content h1 {
+            font-size: 2rem;
+            margin-top: 3rem;
+        }
+        .main__content p {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+        .main__btn {
+            padding: 12px 36px;
+            margin: 2.5rem 0;
+        }
+    }
+}
+
+/*Imagens*/
+.images{
+    background-image: #141414;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.images h1{
+    color: #fff;
+    margin-bottom: 5rem;
+    font-size: 2rem;
+}
+
+.images__container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.images__card {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/poucancer.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(2) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pou].png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(3) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/poucarck.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(4) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pou.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(5) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pou pedo.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(6) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pou romance.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(7) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow bombado.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(8) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow cacapalavra.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(9) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow chad.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(10) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow emo.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(11) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow deepweb.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(12) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow emo2.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(13) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow maldades.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(14) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow real.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card:nth-child(15) {
+    margin: 1rem;
+    height: 425px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('/aula\ qiunta/img/pow surpreso.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #000;      
+}
+
+.images__card::before{
+    opacity: 0.2;
+}
+
+.images__card h2{
+    position: absolute;
+    top: 350px;
+    left: 30px;
+    font-size: 0.8rem;
+}
+
+.images__card p{
+    position: absolute;
+    top: 380px;
+    left: 30px;
+    font-size: 0.8rem;
+}
+
+.images__card:hover{
+    transform: scale(1.01);
+    transform: 0.1s ease-in;
+    cursor: pointer;    
+}
+
+@media screen and (max-width: 960px){
+    .imagens h1 {
+        font-size: 2rem;
+        margin-top: 12rem;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .imagens h1 {
+        font-size: 1.2rem;
+    }
+
+    .imagens__card {
+        width: 300px;
+    }
+}
+
+.footer__container{
+    background-color: #141414;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.website__rights{
+    color: #fff;
+}
